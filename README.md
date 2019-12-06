@@ -1,30 +1,61 @@
-Agency Jekyll theme
-====================
+# Syna Start
 
-Agency theme based on [Agency bootstrap theme ](https://startbootstrap.com/template-overviews/agency/)
+This is a sample project that can be used to jump start your Syna project. It uses Syna theme and Hugo with sample files that introduce two simple pages, one for landing and one for the about page.
 
-# How to use
+## Prerequisites
+- [Install Git](https://git-scm.com/downloads).
+- [Install Go](https://golang.org/doc/install).
+- [Install Hugo](https://gohugo.io/getting-started/installing/). Depending on your system, this might require Scoop, Choclatey, or other software.
 
-###Portfolio 
+## Installation
 
-Portfolio projects are in '/_posts'
+To start using this starter you need to clone or download this repository and update it's git submodules (Syna theme is added as a submodule).
 
-Images are in '/img/portfolio'
+```
+git clone https://git.okkur.org/syna-start project-name && cd project-name
+git submodule init
+git submodule update
+```
 
-###About
+## Usage
 
-Images are in '/img/about/'
+To start your website run the following commands:
 
-###Team
+**Development**:
+```
+$ hugo server -D # This command starts the Hugo server and watches the site directory for changes.
+```
 
-Team members and info are in '_config.yml'
+**Production**:
+```
+$ hugo # This command generates the static website in the public/ directory. If you do not have a site, then it gives errors about missing layout files.
+```
 
-Images are in '/img/team/'
+> Prerequisites: Go, Hugo
 
+## Directory Structure
 
-# Demo
+We're using the standard directory structure using content pages.
 
-View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
+```
+├─ content/
+|  └ _global/ # All global fragments are located in this directory
+|  └ _index/ # Landing page is in this directory and it's url is changed to **/**.
+|  └ about/ # About page
+├ layouts/ # You can add extra layout files here. A sample custom fragment is available as a sample.
+├ static/ # Your static files are in this directory.
+├ themes/ # Hugo uses this directory as a default to look for themes. Syna theme is a git submodule available in this directory.
+├ .gitignore
+├ .gitmodules
+├ config.toml # Hugo config file containing general settings and menu configs.
+```
 
-=========
-For more details, read [documentation](http://jekyllrb.com/)
+For storing images in the static directory, note that Syna fragments look for
+images in their own fragment directory, page directory and `static/images`
+directory. Read our [image fallthrough documentation](https://syna.okkur.org/docs/image-fallthrough/) for more info.
+
+Further details read our [full documentation](https://syna.okkur.org/docs).
+
+## First Steps
+
+Open index.md and type. The changes are visible almost immediately at http://localhost:1313/.
